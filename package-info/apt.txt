@@ -1,0 +1,15 @@
+dmenu
+i3
+i3lock-fancy
+picom
+nitrogen
+brightnessctl
+rofi
+xautolock
+playerctl
+policykit-1-gnome
+lxappearance
+diodon
+polybar
+blueman
+python3-i3ipc
