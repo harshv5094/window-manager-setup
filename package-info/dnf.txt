@@ -1,0 +1,17 @@
+i3
+picom
+polybar
+hyprland
+hyprlock
+hypridle
+hyprpaper
+waybar
+dunst
+grimblast
+nitrogen
+clipman
+polkit-gnome
+brightnessctl
+blueman
+wlogout
+rofi

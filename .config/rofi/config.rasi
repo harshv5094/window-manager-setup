@@ -1,0 +1,18 @@
+configuration {
+display-drun: "Apps";
+modi: "combi";
+display-run: "run";
+display-combi: "Search";
+font: "JetBrainsMono NF Bold 12";
+combi-modi: "drun,ssh,run";
+show-icons: true;
+terminal: "kitty";
+}
+
+@theme "gruvbox-dark" 
+
+entry {
+    placeholder: "What do you want to do?";
+}
+
+
