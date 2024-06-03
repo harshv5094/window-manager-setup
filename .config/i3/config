@@ -230,5 +230,5 @@ include window.conf
 include colors.conf
 include launcher.conf
 
-bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/Pictures/my-wallpapers/untitled_by_thomazdias32_dg32s8y.png
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock -i ~/Pictures/my-wallpapers/untitled_by_thomazdias32_dg32s8y.png
 bindsym $mod+e exec --no-startup-id nautilus
