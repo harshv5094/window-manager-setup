@@ -14,20 +14,20 @@ function package_install() {
 			sudo dnf copr enable solopasha/hyprland
 		fi
 		sudo dnf makecache
-		sudo dnf install "$(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf.txt | tr "\n" " ")"
+		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf.txt | tr "\n" " ")
 	fi
 
 	# For Debian Based Distribution
 	if command -v nala &>/dev/null; then
 		echo_info "Installing nala packages"
-		sudo nala install "$(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")"
+		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
 
 	else
 		echo_info "Installing nala"
 		sudo apt update && sudo apt upgrade -y
 		sudo apt install nala
 		echo_info "Installing nala packages"
-		sudo nala install "$(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")"
+		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
 	fi
 }
 
