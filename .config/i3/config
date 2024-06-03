@@ -123,7 +123,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -230,4 +230,5 @@ include window.conf
 include colors.conf
 include launcher.conf
 
-bindsym $mod+Shift+x exec --no-startup-id i3lock-fancy
+bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/Pictures/my-wallpapers/untitled_by_thomazdias32_dg32s8y.png
+bindsym $mod+e exec --no-startup-id nautilus
