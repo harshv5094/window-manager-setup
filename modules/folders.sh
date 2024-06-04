@@ -209,3 +209,12 @@ else
 		echo_error "Failed to link wlogout Config"
 	fi
 fi
+
+# 90-touchpad.conf
+echo_info "Copying 90-touchpad.conf"
+sudo cp -rf "$HOME/GitHub/wm/90-touchpad.conf" "/etc/X11/xorg.conf.d/"
+if [ $? -eq 0 ]; then
+	echo_success "Copied 90-touchpad.conf"
+else
+	echo_error "Failed to copy 90-touchpad.conf"
+fi
