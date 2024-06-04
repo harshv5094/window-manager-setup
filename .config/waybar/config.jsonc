@@ -2,7 +2,7 @@
 [
   {
     "layer": "bottom",
-    "position": "top",
+    "position": "bottom",
     "spacing": 6,
     "margin": "4px 5px",
     "exclusive": true,
