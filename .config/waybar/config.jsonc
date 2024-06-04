@@ -4,7 +4,6 @@
     "layer": "bottom",
     "position": "bottom",
     "spacing": 6,
-    "margin": "4px 5px",
     "exclusive": true,
     "fixed-center": true,
     "modules-left": ["pulseaudio", "custom/media"],
