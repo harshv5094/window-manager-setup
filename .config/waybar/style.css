@@ -28,7 +28,7 @@ window#waybar {
 #mpd {
   padding: 0px 8px;
   color: rgba(255, 255, 255, 1);
-  border-radius: 20px;
+  border-radius: 10px;
   border: 0.19em solid rgba(203, 75, 22, 1);
   background-color: rgba(0, 43, 54, 0.7);
 }
@@ -43,14 +43,14 @@ window#waybar {
 #workspaces,
 #window {
   color: rgba(255, 255, 255, 1);
-  border-radius: 20px;
+  border-radius: 10px;
   border: 0.19em solid rgba(41, 238, 223, 1);
   background-color: rgba(0, 43, 54, 0.7);
   transition: all 0.4s ease-out;
 }
 
 #workspaces button {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   color: rgba(255, 255, 255, 1);
   transition: all 0.4s ease-out;
