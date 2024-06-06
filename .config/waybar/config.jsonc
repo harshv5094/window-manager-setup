@@ -6,9 +6,12 @@
     "spacing": 6,
     "exclusive": true,
     "fixed-center": true,
-    "modules-left": ["pulseaudio", "custom/media"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["group/systray", "group/end-right-module"],
+    "modules-left": ["hyprland/workspaces", "group/end-left-module"],
+    "modules-right": [
+      "group/systray",
+      "group/end-right-module",
+      "custom/power",
+    ],
     "include": [
       "~/.config/waybar/modules/modules.jsonc",
       "~/.config/waybar/modules/groups.jsonc",

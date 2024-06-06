@@ -6,7 +6,7 @@
 
 window#waybar {
   background-color: rgba(0, 43, 54, 0);
-  border-radius: 20px;
+  border-radius: 10px;
   color: rgba(255, 255, 255, 1);
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -19,7 +19,7 @@ window#waybar {
 #temperature,
 #network,
 #wireplumber,
-#pulseaudio,
+#end-left-module,
 #custom-media,
 #mode,
 #idle_inhibitor,
@@ -99,13 +99,20 @@ window#waybar {
   margin-right: 0;
 }
 
+#end-left-module {
+  border: 0.19em solid rgba(156, 160, 237, 1);
+}
+
+#end-right-module {
+  border: 0.19em solid rgba(255, 193, 0, 1);
+}
+
 #pulseaudio {
-  border: 0.19em solid rgba(108, 113, 196, 1);
-  padding: 0px 8px;
+  padding-right: 4px;
 }
 
 #pulseaudio.muted {
-  border: 0.19em solid rgba(220, 50, 47, 1);
+  color: rgba(220, 50, 47, 1);
 }
 
 #custom-media {
@@ -126,7 +133,7 @@ window#waybar {
 }
 
 #backlight {
-  padding: 0px 8px 0px 4px;
+  padding: 0px 4px;
 }
 
 #battery {
@@ -198,6 +205,10 @@ window#waybar {
 }
 
 #custom-power {
-  padding: 0px 6px;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  border: 0.19em solid rgba(246, 82, 79, 1);
+  background-color: rgba(0, 43, 54, 0.7);
+  padding: 0px 14px;
   color: rgba(245, 60, 60, 1);
 }
