@@ -2,7 +2,7 @@
 [
   {
     "layer": "bottom",
-    "position": "bottom",
+    "position": "top",
     "spacing": 6,
     "exclusive": true,
     "fixed-center": true,
