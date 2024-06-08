@@ -1,5 +1,5 @@
 * {
-  font: "JetBrainsMono Nerd Font 10";
+  font: "JetBrainsMono NF SemiBold 10";
 
   bg0    : #1f1f1fff;
   bg1    : #202020ff;
@@ -60,7 +60,7 @@ icon-search {
 }
 
 entry {
-  font              : "Roboto 12";
+  font              : "JetBrainsMono NF Bold 12";
   placeholder       : "Type here to search";
   placeholder-color : @fg1;
 }
