@@ -9,7 +9,8 @@ show-icons: true;
 terminal: "kitty";
 }
 
-@theme "gruvbox-dark" 
+/*@theme "gruvbox-dark" */
+@theme "~/.config/rofi/themes/tokyo-night.rasi"
 
 entry {
     placeholder: "What do you want to do?";
