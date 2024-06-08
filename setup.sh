@@ -65,10 +65,14 @@ function package_remove_hypr() {
 function initial() {
 	echo -e "Welcome to Window Manager Installation Setup"
 	PS3="Your Option: "
-	options=("Install Packages for hyprland 📦" "Install Packages for i3 📦" "Create Folders Symlinks for hyprland 🔗" "Create Folders Symlinks for i3 🔗" "Remove Packages for hyprland 📦")
+	options=("Clone my wallpapers 🖼️" "Install Packages for hyprland 📦" "Install Packages for i3 📦" "Create Folders Symlinks for hyprland 🔗" "Create Folders Symlinks for i3 🔗" "Remove Packages for hyprland 📦")
 
 	select SELECTED_OPTION in "${options[@]}"; do
 		case "${SELECTED_OPTION}" in
+
+		"Clone my wallpapers 🖼️")
+			git clone https://github.com/harshv5094/my-wallpapers ~/Pictures/my-wallpapers/
+			;;
 
 		"Install Packages for hyprland 📦")
 			package_install_hypr
