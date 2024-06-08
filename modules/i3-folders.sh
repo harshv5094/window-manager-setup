@@ -80,6 +80,32 @@ else
 	fi
 fi
 
+# nitrogen
+if [ -e "$HOME/.config/nitrogen/" ]; then
+	echo_danger "Deleting Existing Nitrogen Config"
+	rm -rf "$HOME/.config/nitrogen/"
+	if [ $? -eq 0 ]; then
+		echo_success "Deleted Nitrogen Config"
+	else
+		echo_erro "Failed to delete Nitrogen Config"
+	fi
+	echo_info "Linking Nitrogen Config"
+	ln -s "$HOME/GitHub/wm/.config/nitrogen/" "$HOME/.config/"
+	if [ $? -eq 0 ]; then
+		echo_success "Linked Nitrogen Config"
+	else
+		echo_error "Failed to link Nitrogen Config"
+	fi
+else
+	echo_info "Linking Nitrogen Config"
+	ln -s "$HOME/GitHub/wm/.config/nitrogen/" "$HOME/.config/"
+	if [ $? -eq 0 ]; then
+		echo_success "Linked Nitrogen Config"
+	else
+		echo_error "Failed to link Nitrogen Config"
+	fi
+fi
+
 # 90-touchpad.conf
 echo_info "Copying 90-touchpad.conf"
 sudo cp -rf "$HOME/GitHub/wm/90-touchpad.conf" "/etc/X11/xorg.conf.d/"
