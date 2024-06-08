@@ -2,8 +2,7 @@
 
 source ~/GitHub/wm/modules/colors.sh
 
-function package_install() {
-
+function package_install_hypr() {
 	# Fo Fedora or Red Hat Based Distribution
 	if command -v dnf &>/dev/null; then
 		echo_info "Installing dnf packages"
@@ -14,7 +13,17 @@ function package_install() {
 			sudo dnf copr enable solopasha/hyprland
 		fi
 		sudo dnf makecache
-		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf.txt | tr "\n" " ")
+		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+	fi
+}
+
+function package_install_i3() {
+
+	# Fo Fedora or Red Hat Based Distribution
+	if command -v dnf &>/dev/null; then
+		echo_info "Installing dnf packages"
+		sudo dnf makecache
+		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
 	fi
 
 	# For Debian Based Distribution
@@ -31,24 +40,65 @@ function package_install() {
 	fi
 }
 
+function package_remove_i3() {
+	# Fo Fedora or Red Hat Based Distribution
+	if command -v dnf &>/dev/null; then
+		echo_info "Removing i3 packages"
+		sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
+	fi
+
+	# For Debian Based Distribution
+	if command -v nala &>/dev/null; then
+		echo_info "Removing i3 packages"
+		sudo nala remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+	fi
+}
+
+function package_remove_hypr() {
+	# Fo Fedora or Red Hat Based Distribution
+	if command -v dnf &>/dev/null; then
+		echo_info "Removing Hyprland packages"
+		sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+	fi
+}
+
 function initial() {
 	echo -e "Welcome to Window Manager Installation Setup"
 	PS3="Your Option: "
-	options=("Install Packages 📦" "Create Folders Symlinks 🔗" "Quit")
+	options=("Install Packages for hyprland 📦" "Install Packages for i3 📦" "Create Folders Symlinks for hyprland 🔗" "Create Folders Symlinks for i3 🔗" "Remove Packages for hyprland 📦")
 
 	select SELECTED_OPTION in "${options[@]}"; do
 		case "${SELECTED_OPTION}" in
 
-		"Install Packages 📦")
-			package_install
+		"Install Packages for hyprland 📦")
+			package_install_hypr
+			break
 			;;
 
-		"Create Folders Symlinks 🔗")
+		"Install Packages for i3 📦")
+			package_install_i3
+			break
+			;;
+
+		"Create Folders Symlinks for hyprland 🔗")
 			~/GitHub/wm/modules/folders.sh
+			~/GitHub/wm/modules/hypr-folders.sh
+			break
 			;;
 
-		"Quit")
-			echo_label "Exiting..."
+		"Create Folders Symlinks for i3 🔗")
+			~/GitHub/wm/modules/folders.sh
+			~/GitHub/wm/modules/i3-folders.sh
+			break
+			;;
+
+		"Remove Packages for hyprland 📦")
+			package_remove_hypr
+			break
+			;;
+
+		"Remove Packages for i3 📦")
+			package_remove_i3
 			break
 			;;
 
