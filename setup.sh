@@ -14,6 +14,12 @@ function package_install_hypr() {
 		fi
 		sudo dnf makecache
 		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+		return
+	fi
+
+	if command -v pacman &>/dev/null; then
+		sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-hypr.txt | tr "\n" " ")
+		return
 	fi
 }
 
@@ -24,19 +30,26 @@ function package_install_i3() {
 		echo_info "Installing dnf packages"
 		sudo dnf makecache
 		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
+		return
 	fi
 
 	# For Debian Based Distribution
 	if command -v nala &>/dev/null; then
 		echo_info "Installing nala packages"
 		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
-
+		return
 	else
 		echo_info "Installing nala"
 		sudo apt update && sudo apt upgrade -y
 		sudo apt install nala
 		echo_info "Installing nala packages"
 		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+		return
+	fi
+
+	if command -v pacman &>/dev/null; then
+		sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
+		return
 	fi
 }
 
@@ -45,12 +58,19 @@ function package_remove_i3() {
 	if command -v dnf &>/dev/null; then
 		echo_info "Removing i3 packages"
 		sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
+		return
 	fi
 
 	# For Debian Based Distribution
 	if command -v nala &>/dev/null; then
 		echo_info "Removing i3 packages"
 		sudo nala remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+		return
+	fi
+
+	if command -v pacman &>/dev/null; then
+		sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
+		return
 	fi
 }
 
@@ -59,6 +79,11 @@ function package_remove_hypr() {
 	if command -v dnf &>/dev/null; then
 		echo_info "Removing Hyprland packages"
 		sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+		return
+	fi
+
+	if command -v pacman &>/dev/null; then
+		sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-hypr.txt | tr "\n" " ")
 	fi
 }
 
