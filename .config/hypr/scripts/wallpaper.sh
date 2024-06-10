@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+hyprctl hyprpaper unload all
 killall hyprpaper
 
 echo "splash = true" >~/.config/hypr/hyprpaper.conf
