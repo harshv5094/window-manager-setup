@@ -1,116 +1,67 @@
 #!/usr/bin/env bash
 
 source ~/GitHub/wm/modules/colors.sh
+source ~/GitHub/wm/modules/cmd_check.sh
 
 # i3wm
 if [ -e "$HOME/.config/i3" ]; then
 	echo_danger "Deleting Existing i3wm Config"
-	rm -rf "$HOME/.config/i3"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted i3wm Config"
-	else
-		echo_error "Failed to delete i3wm Config"
-	fi
+	delete_folder_check "i3"
+
 	echo_info "Linking i3wm Config"
 	ln -s "$HOME/GitHub/wm/.config/i3" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked i3wm Config"
-	else
-		echo_error "Failed to link i3wm Config"
-	fi
+	link_folder_check "i3"
 else
 	echo_info "Linking i3wm Config"
 	ln -s "$HOME/GitHub/wm/.config/i3" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked i3wm Config"
-	else
-		echo_error "Failed to link i3wm Config"
-	fi
+	link_folder_check "i3"
 fi
 
 # polybar
 if [ -e "$HOME/.config/polybar" ]; then
 	echo_danger "Deleting Existing Polybar Config"
-	rm -rf "$HOME/.config/polybar"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Polybar Config"
-	else
-		echo_error "Failed to delete Polybar Config"
-	fi
+	delete_folder_check "polybar"
+
 	echo_info "Linking Polybar Config"
 	ln -s "$HOME/GitHub/wm/.config/polybar" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Polybar Config"
-	else
-		echo_error "Failed to link Polybar Config"
-	fi
+	link_folder_check "polybar"
 else
 	echo_info "Linking Polybar Config"
 	ln -s "$HOME/GitHub/wm/.config/polybar" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Polybar Config"
-	else
-		echo_error "Failed to link Polybar Config"
-	fi
+	link_folder_check "polybar"
 fi
 
 # rofi
 if [ -e "$HOME/.config/polybar" ]; then
 	echo_danger "Deleting Existing Rofi Config"
 	rm -rf "$HOME/.config/rofi"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Rofi Config"
-	else
-		echo_erro "Failed to delete Rofi Config"
-	fi
+	delete_folder_check "rofi"
+
 	echo_info "Linking Rofi Config"
 	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Rofi Config"
-	else
-		echo_error "Failed to link Rofi Config"
-	fi
+	link_folder_check "rofi"
 else
 	echo_info "Linking Rofi Config"
 	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Rofi Config"
-	else
-		echo_error "Failed to link Rofi Config"
-	fi
+	delete_folder_check "rofi"
 fi
 
 # nitrogen
 if [ -e "$HOME/.config/nitrogen/" ]; then
 	echo_danger "Deleting Existing Nitrogen Config"
 	rm -rf "$HOME/.config/nitrogen/"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Nitrogen Config"
-	else
-		echo_erro "Failed to delete Nitrogen Config"
-	fi
+	link_folder_check "nitrogen"
+
 	echo_info "Linking Nitrogen Config"
 	ln -s "$HOME/GitHub/wm/.config/nitrogen/" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Nitrogen Config"
-	else
-		echo_error "Failed to link Nitrogen Config"
-	fi
+	link_folder_check "nitrogen"
 else
 	echo_info "Linking Nitrogen Config"
 	ln -s "$HOME/GitHub/wm/.config/nitrogen/" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Nitrogen Config"
-	else
-		echo_error "Failed to link Nitrogen Config"
-	fi
+	link_folder_check "nitrogen"
 fi
 
 # 90-touchpad.conf
 echo_info "Copying 90-touchpad.conf"
-sudo cp -rf "$HOME/GitHub/wm/90-touchpad.conf" "/etc/X11/xorg.conf.d/"
-if [ $? -eq 0 ]; then
-	echo_success "Copied 90-touchpad.conf"
-else
-	echo_error "Failed to copy 90-touchpad.conf"
-fi
+sudo cp "$HOME/GitHub/wm/90-touchpad.conf" "/etc/X11/xorg.conf.d/"
+copy_file_check "90-touchpad.conf"

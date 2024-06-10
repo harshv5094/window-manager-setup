@@ -1,107 +1,64 @@
 #!/usr/bin/env bash
 
 source ~/GitHub/wm/modules/colors.sh
+source ~/GitHub/wm/modules/cmd_check.sh
 
 # hyprland
 if [ -e "$HOME/.config/hypr" ]; then
 	echo_danger "Deleting Existing Hyperland Config"
 	rm -rf "$HOME/.config/hypr"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Hyperland Config"
-	else
-		echo_error "Failed to delete Hyperland Config"
-	fi
+	delete_folder_check "hypr"
+
 	echo_info "Linking Hyperland Config"
 	ln -s "$HOME/GitHub/wm/.config/hypr" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Hyperland Config"
-	else
-		echo_error "Failed to link Hyperland Config"
-	fi
+	link_folder_check "hypr"
 else
 	echo_info "Linking Hyperland Config"
 	ln -s "$HOME/GitHub/wm/.config/hypr" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Hyperland Config"
-	else
-		echo_error "Failed to link Hyperland Config"
-	fi
+	link_folder_check "hypr"
 fi
 
 # waybar
 if [ -e "$HOME/.config/waybar" ]; then
 	echo_danger "Deleting Existing Waybar Config"
 	rm -rf "$HOME/.config/waybar"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Waybar Config"
-	else
-		echo_error "Failed to delete Waybar Config"
-	fi
+	delete_folder_check "waybar"
+
 	echo_info "Linking Waybar Config"
 	ln -s "$HOME/GitHub/wm/.config/waybar" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Waybar Config"
-	else
-		echo_error "Failed to link Waybar Config"
-	fi
+	link_folder_check "waybar"
 else
 	echo_info "Linking Waybar Config"
 	ln -s "$HOME/GitHub/wm/.config/waybar" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Waybar Config"
-	else
-		echo_error "Failed to link Waybar Config"
-	fi
+	link_folder_check "waybar"
 fi
 
 # wofi
 if [ -e "$HOME/.config/wofi" ]; then
 	echo_danger "Deleting Existing Wofi Config"
 	rm -rf "$HOME/.config/wofi"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted Wofi Config"
-	else
-		echo_error "Failed to delete Wofi Config"
-	fi
+	delete_folder_check "wofi"
+
 	echo_info "Linking Wofi Config"
 	ln -s "$HOME/GitHub/wm/.config/wofi" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Wofi Config"
-	else
-		echo_error "Failed to link Wofi Config"
-	fi
+	link_folder_check "wofi"
 else
 	echo_info "Linking Wofi Config"
 	ln -s "$HOME/GitHub/wm/.config/wofi" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked Wofi Config"
-	else
-		echo_error "Failed to link Wofi Config"
-	fi
+	link_folder_check "wofi"
 fi
 
 # wlogout
 if [ -e "$HOME/.config/wlogout" ]; then
 	echo_danger "Deleting Existing wlogout Config"
 	rm -rf "$HOME/.config/wlogout"
-	if [ $? -eq 0 ]; then
-		echo_success "Deleted wlogout Config"
-	else
-		echo_error "Failed to delete wlogout Config"
-	fi
+	delete_folder_check "wlogout"
+
 	echo_info "Linking wlogout Config"
 	ln -s "$HOME/GitHub/wm/.config/wlogout" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked wlogout Config"
-	else
-		echo_error "Failed to link wlogout Config"
-	fi
+	link_folder_check "wlogout"
 else
 	echo_info "Linking wlogout Config"
 	ln -s "$HOME/GitHub/wm/.config/wlogout" "$HOME/.config/"
-	if [ $? -eq 0 ]; then
-		echo_success "Linked wlogout Config"
-	else
-		echo_error "Failed to link wlogout Config"
-	fi
+	link_folder_check "wlogout"
 fi
