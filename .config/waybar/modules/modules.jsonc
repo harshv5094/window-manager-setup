@@ -19,8 +19,8 @@
 
   // Clock
   "clock": {
-    "format": "{:%a %x %I:%M %p}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a %I:%M %p}",
+    "tooltip-format": "<big>{:%x}</big>\n<tt><small>{calendar}</small></tt>",
   },
 
   // Battery
