@@ -47,10 +47,10 @@ function package_install_i3() {
 		return
 	fi
 
-	if command -v pacman &>/dev/null; then
-		sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
-		return
-	fi
+	# if command -v pacman &>/dev/null; then
+	# 	sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
+	# 	return
+	# fi
 }
 
 function package_remove_i3() {
@@ -68,10 +68,10 @@ function package_remove_i3() {
 		return
 	fi
 
-	if command -v pacman &>/dev/null; then
-		sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
-		return
-	fi
+	# if command -v pacman &>/dev/null; then
+	# 	sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
+	# 	return
+	# fi
 }
 
 function package_remove_hypr() {
