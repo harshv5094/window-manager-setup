@@ -10,3 +10,4 @@ polkit-gnome
 brightnessctl
 blueman
 wlogout
+network-manager-applet
