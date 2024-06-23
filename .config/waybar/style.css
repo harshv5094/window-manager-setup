@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrainsMono NF SemiBold", "Font Awesome 6 Free",
+  font-family: "JetBrainsMono NF", "Font Awesome 6 Free",
     "Font Awesome 6 Brands", monospace;
   font-size: 13px;
 }
@@ -13,13 +13,13 @@ window#waybar {
 }
 
 #end-right-module,
+#end-left-module,
 #cpu,
 #memory,
 #disk,
 #temperature,
 #network,
 #wireplumber,
-#end-left-module,
 #custom-media,
 #mode,
 #idle_inhibitor,
@@ -28,6 +28,7 @@ window#waybar {
 #mpd {
   padding: 0px 8px;
   color: rgba(255, 255, 255, 1);
+  font-weight: 600;
   border-radius: 10px;
   border: 0.19em solid rgba(203, 75, 22, 1);
   background-color: rgba(0, 43, 54, 0.7);
@@ -40,9 +41,9 @@ window#waybar {
   }
 }
 
-#workspaces,
-#window {
+#workspaces {
   color: rgba(255, 255, 255, 1);
+  font-weight: 700;
   border-radius: 10px;
   border: 0.19em solid rgba(41, 238, 223, 1);
   background-color: rgba(0, 43, 54, 0.7);
@@ -97,6 +98,16 @@ window#waybar {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
+}
+
+#window {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  border-radius: 20px;
+  border: 0.19em solid rgba(41, 238, 223, 1);
+  padding: 0px 8px;
+  background-color: rgba(0, 43, 54, 0.7);
+  transition: all 0.4s ease-out;
 }
 
 #end-left-module {

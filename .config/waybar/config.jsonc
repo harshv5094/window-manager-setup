@@ -7,7 +7,7 @@
     "exclusive": true,
     "fixed-center": true,
     "modules-left": ["hyprland/workspaces", "group/end-left-module"],
-    "modules-center": ["custom/media"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [
       "group/systray",
       "group/end-right-module",

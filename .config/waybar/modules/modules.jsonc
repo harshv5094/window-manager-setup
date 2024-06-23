@@ -6,7 +6,7 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "return-type": "json",
-    "max-length": 40,
+    "max-length": 60,
     "escape": true,
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources folder
   },
@@ -87,5 +87,12 @@
   "tray": {
     "icon-size": 18,
     "spacing": 5,
+  },
+
+  // Workspaces
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 24,
   },
 }
