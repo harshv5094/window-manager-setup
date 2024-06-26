@@ -31,21 +31,6 @@ else
 	link_folder_check "polybar"
 fi
 
-# rofi
-if [ -e "$HOME/.config/polybar" ]; then
-	echo_danger "Deleting Existing Rofi Config"
-	rm -rf "$HOME/.config/rofi"
-	delete_folder_check "rofi"
-
-	echo_info "Linking Rofi Config"
-	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
-	link_folder_check "rofi"
-else
-	echo_info "Linking Rofi Config"
-	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
-	delete_folder_check "rofi"
-fi
-
 # nitrogen
 if [ -e "$HOME/.config/nitrogen/" ]; then
 	echo_danger "Deleting Existing Nitrogen Config"
