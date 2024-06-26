@@ -55,12 +55,12 @@ function package_install_i3() {
 function initial() {
 	echo -e "Welcome to Window Manager Installation Setup"
 	PS3="Your Option: "
-	options=("Clone my wallpapers 🖼️ and Install common packages 📦" "Hyprland 🌈" "i3wm 🌈")
+	options=("Clone wallpapes, install common packages, link common configuration folders" "Hyprland 🌈" "i3wm 🌈")
 
 	select SELECTED_OPTION in "${options[@]}"; do
 		case "${SELECTED_OPTION}" in
 
-		"Clone my wallpapers 🖼️ and Install common packages 📦")
+		"Clone wallpapes, install common packages, link common configuration folders")
 			if [ -e "$HOME/Pictures/my-wallpapers/" ]; then
 				echo_info "Wallpaper Directory is already clonned"
 			else
@@ -68,18 +68,18 @@ function initial() {
 				git clone https://github.com/harshv5094/my-wallpapers ~/Pictures/
 			fi
 			package_install_common
+			~/GitHub/wm/modules/folders.sh
+			break
 			;;
 
 		"Hyprland 🌈")
 			package_install_hypr
-			~/GitHub/wm/modules/folders.sh
 			~/GitHub/wm/modules/hypr-folders.sh
 			break
 			;;
 
 		"i3wm 🌈")
 			package_install_i3
-			~/GitHub/wm/modules/folders.sh
 			~/GitHub/wm/modules/i3-folders.sh
 			break
 			;;
