@@ -13,3 +13,4 @@ diodon
 polybar
 blueman
 python3-i3ipc
+copyq

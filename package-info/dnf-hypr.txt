@@ -11,3 +11,4 @@ brightnessctl
 blueman
 wlogout
 network-manager-applet
+copyq
