@@ -3,12 +3,5 @@ hyprlock
 hypridle
 hyprpaper
 waybar
-dunst
 grimblast
-clipman
-polkit-gnome
-brightnessctl
-blueman
 wlogout
-network-manager-applet
-copyq

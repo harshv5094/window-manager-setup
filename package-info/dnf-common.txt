@@ -1,0 +1,8 @@
+polkit-gnome
+brightnessctl
+network-manager-applet
+copyq
+clipman
+blueman
+dunst
+nitrogen

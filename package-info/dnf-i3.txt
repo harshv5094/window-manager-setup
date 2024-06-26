@@ -1,10 +1,5 @@
 i3
 picom
 polybar
-polkit-gnome
-brightnessctl
-blueman
 rofi
 python3-i3ipc
-dunst
-nitrogen
