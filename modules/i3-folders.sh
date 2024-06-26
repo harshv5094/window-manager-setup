@@ -46,6 +46,21 @@ else
 	link_folder_check "nitrogen"
 fi
 
+# rofi
+if [ -e "$HOME/.config/rofi" ]; then
+	echo_danger "Deleting Existing Rofi Config"
+	rm -rf "$HOME/.config/rofi"
+	delete_folder_check "rofi"
+
+	echo_info "Linking Rofi Config"
+	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
+	link_folder_check "rofi"
+else
+	echo_info "Linking Rofi Config"
+	ln -s "$HOME/GitHub/wm/.config/rofi" "$HOME/.config/"
+	delete_folder_check "rofi"
+fi
+
 # 90-touchpad.conf
 echo_info "Copying 90-touchpad.conf"
 sudo cp "$HOME/GitHub/wm/90-touchpad.conf" "/etc/X11/xorg.conf.d/"
