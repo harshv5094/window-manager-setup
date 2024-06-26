@@ -2,6 +2,15 @@
 
 source ~/GitHub/wm/modules/colors.sh
 
+function package_install_common() {
+	# For Fedora or Red Hat Based Distribution
+	if command -v dnf &>/dev/null; then
+		echo_info "Installing common packages"
+		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-common.txt | tr "\n" " ")
+		return
+	fi
+}
+
 function package_install_hypr() {
 	# Fo Fedora or Red Hat Based Distribution
 	if command -v dnf &>/dev/null; then
@@ -10,15 +19,10 @@ function package_install_hypr() {
 			echo_info "Hyprland copr is enabled"
 		else
 			echo_info "Enabling hyprland copr"
-			sudo dnf copr enable solopasha/hyprland
+			sudo dnf copr enable solopasha/hyprland -y
 		fi
 		sudo dnf makecache
 		sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
-		return
-	fi
-
-	if command -v pacman &>/dev/null; then
-		sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-hypr.txt | tr "\n" " ")
 		return
 	fi
 }
@@ -36,64 +40,47 @@ function package_install_i3() {
 	# For Debian Based Distribution
 	if command -v nala &>/dev/null; then
 		echo_info "Installing nala packages"
-		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
 		return
 	else
 		echo_info "Installing nala"
 		sudo apt update && sudo apt upgrade -y
 		sudo apt install nala
 		echo_info "Installing nala packages"
-		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+		sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
 		return
 	fi
-
-	# if command -v pacman &>/dev/null; then
-	# 	sudo pacman -S $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
-	# 	return
-	# fi
 }
 
 function initial() {
 	echo -e "Welcome to Window Manager Installation Setup"
 	PS3="Your Option: "
-	options=("Clone my wallpapers 🖼️" "Install Packages for hyprland 📦" "Install Packages for i3 📦" "Create Folders Symlinks for hyprland 🔗" "Create Folders Symlinks for i3 🔗")
+	options=("Clone my wallpapers 🖼️ and Install common packages 📦" "Hyprland 🌈" "i3wm 🌈")
 
 	select SELECTED_OPTION in "${options[@]}"; do
 		case "${SELECTED_OPTION}" in
 
-		"Clone my wallpapers 🖼️")
-			git clone https://github.com/harshv5094/my-wallpapers ~/Pictures/my-wallpapers/
+		"Clone my wallpapers 🖼️ and Install common packages 📦")
+			if [ -e "$HOME/Pictures/my-wallpapers/" ]; then
+				echo_info "Wallpaper Directory is already clonned"
+			else
+				echo_info "Clonning my wallpaper directory"
+				git clone https://github.com/harshv5094/my-wallpapers ~/Pictures/
+			fi
+			package_install_common
 			;;
 
-		"Install Packages for hyprland 📦")
+		"Hyprland 🌈")
 			package_install_hypr
-			break
-			;;
-
-		"Install Packages for i3 📦")
-			package_install_i3
-			break
-			;;
-
-		"Create Folders Symlinks for hyprland 🔗")
 			~/GitHub/wm/modules/folders.sh
 			~/GitHub/wm/modules/hypr-folders.sh
 			break
 			;;
 
-		"Create Folders Symlinks for i3 🔗")
+		"i3wm 🌈")
+			package_install_i3
 			~/GitHub/wm/modules/folders.sh
 			~/GitHub/wm/modules/i3-folders.sh
-			break
-			;;
-
-		"Remove Packages for hyprland 📦")
-			package_remove_hypr
-			break
-			;;
-
-		"Remove Packages for i3 📦")
-			package_remove_i3
 			break
 			;;
 

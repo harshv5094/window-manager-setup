@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/GitHub/wm/modules/colors.sh
+
 function package_remove_i3() {
 	# Fo Fedora or Red Hat Based Distribution
 	if command -v dnf &>/dev/null; then
@@ -11,7 +13,7 @@ function package_remove_i3() {
 	# For Debian Based Distribution
 	if command -v nala &>/dev/null; then
 		echo_info "Removing i3 packages"
-		sudo nala remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt.txt | tr "\n" " ")
+		sudo nala remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
 		return
 	fi
 
