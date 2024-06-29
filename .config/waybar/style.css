@@ -30,7 +30,7 @@ window#waybar {
   color: rgba(255, 255, 255, 1);
   font-weight: 600;
   border-radius: 10px;
-  border: 0.19em solid rgba(203, 75, 22, 1);
+  border: 2px solid rgba(203, 75, 22, 1);
   background-color: rgba(0, 43, 54, 0.7);
 }
 
@@ -45,7 +45,7 @@ window#waybar {
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
   border-radius: 10px;
-  border: 0.19em solid rgba(41, 238, 223, 1);
+  border: 2px solid rgba(41, 238, 223, 1);
   background-color: rgba(0, 43, 54, 0.7);
   transition: all 0.4s ease-out;
 }
@@ -104,18 +104,18 @@ window#waybar {
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
   border-radius: 20px;
-  border: 0.19em solid rgba(41, 238, 223, 1);
+  border: 2px solid rgba(41, 238, 223, 1);
   padding: 0px 8px;
   background-color: rgba(0, 43, 54, 0.7);
   transition: all 0.4s ease-out;
 }
 
 #end-left-module {
-  border: 0.19em solid rgba(156, 160, 237, 1);
+  border: 2px solid rgba(156, 160, 237, 1);
 }
 
 #end-right-module {
-  border: 0.19em solid rgba(255, 193, 0, 1);
+  border: 2px solid rgba(255, 193, 0, 1);
 }
 
 #pulseaudio {
@@ -127,16 +127,16 @@ window#waybar {
 }
 
 #custom-media {
-  border: 0.19em solid rgba(46, 204, 113, 1);
+  border: 2px solid rgba(46, 204, 113, 1);
   min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-  border: 0.19em solid rgba(46, 204, 113, 1);
+  border: 2px solid rgba(46, 204, 113, 1);
 }
 
 #custom-media.custom-vlc {
-  border: 0.19em solid rgba(255, 160, 0, 1);
+  border: 2px solid rgba(255, 160, 0, 1);
 }
 
 #clock {
@@ -182,7 +182,7 @@ window#waybar {
 }
 
 #systray {
-  border: 0.19em solid rgba(46, 204, 113, 1);
+  border: 2px solid rgba(46, 204, 113, 1);
   padding: 0px 4px;
 }
 
@@ -218,7 +218,7 @@ window#waybar {
 #custom-power {
   color: rgba(255, 255, 255, 1);
   border-radius: 10px;
-  border: 0.19em solid rgba(246, 82, 79, 1);
+  border: 2px solid rgba(246, 82, 79, 1);
   background-color: rgba(0, 43, 54, 0.7);
   padding: 0px 14px;
   color: rgba(245, 60, 60, 1);
