@@ -6,8 +6,8 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "return-type": "json",
-    "max-length": 60,
     "escape": true,
+    "max-length": 50,
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources folder
   },
 
