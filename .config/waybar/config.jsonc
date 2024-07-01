@@ -4,7 +4,7 @@
     "layer": "bottom",
     "position": "top",
     "spacing": 6,
-    "margin": "2px 2px",
+    "margin": "4px 6px",
     "exclusive": true,
     "fixed-center": true,
     "modules-left": ["hyprland/workspaces", "group/end-left-module"],
