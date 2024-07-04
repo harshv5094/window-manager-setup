@@ -6,3 +6,4 @@ clipman
 blueman
 dunst
 nitrogen
+pcmanfm
