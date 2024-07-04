@@ -6,4 +6,4 @@ clipman
 blueman
 dunst
 nitrogen
-pcmanfm
+thunar
