@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/Pictures/my-wallpapers/untitled_by_thomazdias32_dg32s8y.png
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/Pictures/my-wallpapers/nice-blue-background.png
 
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
