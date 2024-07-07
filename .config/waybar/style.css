@@ -148,7 +148,7 @@ window#waybar {
 }
 
 #battery {
-  padding: 0px 8px;
+  padding: 0px 10px 0px 4px;
 }
 
 #battery.charging,
