@@ -104,7 +104,7 @@ window#waybar {
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
   border-radius: 20px;
-  border: 2px solid rgba(41, 238, 223, 1);
+  border: 2px solid rgba(220, 50, 47, 1);
   padding: 0px 8px;
   background-color: rgba(0, 43, 54, 0.7);
   transition: all 0.4s ease-out;
@@ -140,7 +140,7 @@ window#waybar {
 }
 
 #clock {
-  padding: 0px 4px 0px 0px;
+  padding: 0px 8px;
 }
 
 #backlight {
@@ -148,7 +148,7 @@ window#waybar {
 }
 
 #battery {
-  padding: 0px 8px 0px 4px;
+  padding: 0px 8px;
 }
 
 #battery.charging,
