@@ -230,5 +230,6 @@ include window.conf
 include colors.conf
 include launcher.conf
 
+bindsym $mod+Shift+w exec --no-startup-id nitrogen
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -i ~/Pictures/my-wallpapers/nice-blue-background.png
 bindsym $mod+e exec --no-startup-id thunar
