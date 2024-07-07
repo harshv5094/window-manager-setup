@@ -6,7 +6,7 @@
 
 window#waybar {
   background-color: rgba(0, 43, 54, 0);
-  border-radius: 10px;
+  border-radius: 20px;
   color: rgba(255, 255, 255, 1);
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -29,7 +29,7 @@ window#waybar {
   padding: 0px 8px;
   color: rgba(255, 255, 255, 1);
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid rgba(203, 75, 22, 1);
   background-color: rgba(0, 43, 54, 0.7);
 }
@@ -44,14 +44,14 @@ window#waybar {
 #workspaces {
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid rgba(41, 238, 223, 1);
   background-color: rgba(0, 43, 54, 0.7);
   transition: all 0.4s ease-out;
 }
 
 #workspaces button {
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   color: rgba(255, 255, 255, 1);
   transition: all 0.4s ease-out;
@@ -217,9 +217,9 @@ window#waybar {
 
 #custom-power {
   color: rgba(255, 255, 255, 1);
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid rgba(246, 82, 79, 1);
   background-color: rgba(0, 43, 54, 0.7);
-  padding: 0px 14px;
+  padding: 2px 14px;
   color: rgba(245, 60, 60, 1);
 }
