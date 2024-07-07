@@ -9,11 +9,7 @@
     "fixed-center": true,
     "modules-left": ["hyprland/workspaces", "group/end-left-module"],
     "modules-center": ["custom/media"],
-    "modules-right": [
-      "group/systray",
-      "group/end-right-module",
-      "custom/power",
-    ],
+    "modules-right": ["group/systray", "group/end-right-module"],
     "include": [
       "~/.config/waybar/modules/modules.jsonc",
       "~/.config/waybar/modules/groups.jsonc",

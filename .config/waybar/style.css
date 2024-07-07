@@ -214,12 +214,3 @@ window#waybar {
 #power-profiles-daemon.power-saver {
   color: rgba(46, 204, 113, 1);
 }
-
-#custom-power {
-  color: rgba(255, 255, 255, 1);
-  border-radius: 20px;
-  border: 2px solid rgba(246, 82, 79, 1);
-  background-color: rgba(0, 43, 54, 0.7);
-  padding: 2px 14px;
-  color: rgba(245, 60, 60, 1);
-}

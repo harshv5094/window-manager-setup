@@ -50,13 +50,6 @@
     },
   },
 
-  // Power Button
-  "custom/power": {
-    "format": "&#x23FB;",
-    "tooltip": false,
-    "on-click": "wlogout",
-  },
-
   // Audio Information
   "pulseaudio": {
     "format": "{volume}% {icon} ",
