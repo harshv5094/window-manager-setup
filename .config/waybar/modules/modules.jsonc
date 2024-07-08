@@ -20,7 +20,7 @@
   // Clock
   "clock": {
     "format": "{:%a %I:%M %p}",
-    "format-alt": "{:%a %d/%M/%Y}",
+    "format-alt": "{:%a %d/%m/%Y}",
     "tooltip-format": "<big>{:%x}</big>\n<tt><small>{calendar}</small></tt>",
   },
 
