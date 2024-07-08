@@ -5,10 +5,10 @@
   },
   "group/end-left-module": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio", "backlight"],
+    "modules": ["pulseaudio", "backlight", "battery"],
   },
   "group/end-right-module": {
     "orientation": "horizontal",
-    "modules": ["clock", "battery"],
+    "modules": ["clock"],
   },
 }
