@@ -28,7 +28,7 @@ function package_remove_hypr() {
   if command -v dnf &>/dev/null; then
     echo_info "Removing Hyprland packages"
     sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
-    echo_info "Enabling hyprland copr"
+    echo_info "Disabling hyprland copr"
     sudo dnf copr disable solopasha/hyprland
     return
   fi
