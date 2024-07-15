@@ -104,8 +104,8 @@
 
   // Workspaces
   "hyprland/window": {
-    "format": "{title}",
+    "format": "👉 {}",
+    "separate-outputs": true,
     "icon": true,
-    "icon-size": 24,
   },
 }
