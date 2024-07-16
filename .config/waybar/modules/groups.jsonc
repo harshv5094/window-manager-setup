@@ -3,11 +3,11 @@
     "orientation": "horizontal",
     "modules": ["tray", "power-profiles-daemon"],
   },
-  "group/end-left-module": {
+  "group/module-one": {
     "orientation": "horizontal",
     "modules": ["pulseaudio", "backlight"],
   },
-  "group/end-right-module": {
+  "group/module-two": {
     "orientation": "horizontal",
     "modules": ["clock", "battery"],
   },

@@ -12,8 +12,8 @@ window#waybar {
   transition-duration: 0.5s;
 }
 
-#end-right-module,
-#end-left-module,
+#module-two,
+#module-one,
 #cpu,
 #memory,
 #disk,
@@ -110,11 +110,11 @@ window#waybar {
   transition: all 0.4s ease-out;
 }
 
-#end-left-module {
+#module-one {
   border: 2px solid rgba(156, 160, 237, 1);
 }
 
-#end-right-module {
+#module-two {
   border: 2px solid rgba(255, 193, 0, 1);
 }
 

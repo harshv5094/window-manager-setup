@@ -19,7 +19,8 @@
 
   // Clock
   "clock": {
-    "format": "{:%a %d/%m/%Y %I:%M %p}",
+    "format": "{:%a %I:%M %p}",
+    "format-alt": "{:%a %d/%m/%Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",

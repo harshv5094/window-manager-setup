@@ -7,12 +7,8 @@
     "margin": "2px 4px",
     "exclusive": true,
     "fixed-center": true,
-    "modules-left": [
-      "group/end-left-module",
-      "hyprland/workspaces",
-      "hyprland/window",
-    ],
-    "modules-right": ["group/systray", "group/end-right-module"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["group/systray", "group/module-one", "group/module-two"],
     "include": [
       "~/.config/waybar/modules/modules.jsonc",
       "~/.config/waybar/modules/groups.jsonc",
