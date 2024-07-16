@@ -62,11 +62,19 @@ function initial() {
 
     "Remove Packages for hyprland 📦")
       package_remove_hypr
+      unlink ~/.config/hypr
+      unlink ~/.config/wofi
+      unlink ~/.config/wlogout
+      unlink ~/.config/waybar
       break
       ;;
 
     "Remove Packages for i3 📦")
       package_remove_i3
+      unlink ~/.config/i3
+      unlink ~/.config/polybar
+      unlink ~/.config/rofi
+      unlink ~/.config/nitorgen
       break
       ;;
 
