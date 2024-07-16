@@ -57,6 +57,7 @@ function initial() {
 
     "Remove Common Packages 📦")
       package_remove_common
+      unlink ~/.config/dunst
       break
       ;;
 
@@ -84,6 +85,6 @@ function initial() {
     esac
   done
 
-}
+
 
 initial
