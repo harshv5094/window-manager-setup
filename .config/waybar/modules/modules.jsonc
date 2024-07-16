@@ -15,6 +15,7 @@
   "hyprland/workspaces": {
     "active-only": false,
     "format": "{name}",
+    "show-special": true,
   },
 
   // Clock
