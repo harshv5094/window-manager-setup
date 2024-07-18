@@ -3,3 +3,5 @@ picom
 polybar
 rofi
 python3-i3ipc
+lxappearance
+lxappearance-devel
