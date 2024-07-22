@@ -5,5 +5,3 @@ copyq
 blueman
 dunst
 nitrogen
-thunar
-playerctl
