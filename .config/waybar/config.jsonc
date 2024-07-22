@@ -3,6 +3,7 @@
   {
     "layer": "bottom",
     "position": "top",
+    "spacing": 4,
     "margin": "2px 4px",
     "exclusive": true,
     "fixed-center": true,
