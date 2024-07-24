@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-source ~/GitHub/wm/modules/colors.sh
+source ~/.ghq/github.com/harshv5094/window-manager-setup/modules/colors.sh
 
 function package_remove_i3() {
   # Fo Fedora or Red Hat Based Distribution
   if command -v dnf &>/dev/null; then
     echo_info "Removing i3 packages"
-    sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
+    sudo dnf remove $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-i3.txt | tr "\n" " ")
     return
   fi
 
   # For Debian Based Distribution
   if command -v nala &>/dev/null; then
     echo_info "Removing i3 packages"
-    sudo nala remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
+    sudo nala remove $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/apt-i3.txt | tr "\n" " ")
     return
   fi
 
   if command -v pacman &>/dev/null; then
-    sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-i3.txt | tr "\n" " ")
+    sudo pacman -R $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/pacman-i3.txt | tr "\n" " ")
     return
   fi
 }
@@ -27,14 +27,14 @@ function package_remove_hypr() {
   # Fo Fedora or Red Hat Based Distribution
   if command -v dnf &>/dev/null; then
     echo_info "Removing Hyprland packages"
-    sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+    sudo dnf remove $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-hypr.txt | tr "\n" " ")
     echo_info "Disabling hyprland copr"
     sudo dnf copr disable solopasha/hyprland
     return
   fi
 
   if command -v pacman &>/dev/null; then
-    sudo pacman -R $(grep -vE "^\s*#" ~/GitHub/wm/package-info/pacman-hypr.txt | tr "\n" " ")
+    sudo pacman -R $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/pacman-hypr.txt | tr "\n" " ")
   fi
 }
 
@@ -42,7 +42,7 @@ function package_remove_common() {
   # For Fedora or Red Hat Based Distribution
   if command -v dnf &>/dev/null; then
     echo_info "Installing common packages"
-    sudo dnf remove $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-common.txt | tr "\n" " ")
+    sudo dnf remove $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-common.txt | tr "\n" " ")
     return
   fi
 }

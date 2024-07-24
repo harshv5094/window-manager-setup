@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/GitHub/wm/.scripts/modules/colors.sh
+source ~/.ghq/github.com/harshv5094/window-manager-setup/.scripts/modules/colors.sh
 
 function delete_folder_check() {
   text=$1

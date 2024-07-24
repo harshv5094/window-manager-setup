@@ -1,4 +1,5 @@
 # Window Manager Setup
 
 Just run `setup.sh` and the script will take care of the rest.
-You need to make sure that the clone location of repository is `~/GitHub/wm`, otherwise the script will fail.
+I'm cloning my repository using ghq.
+The path is `~/.ghq/github.com/harshv5094/window-manager-setup/`

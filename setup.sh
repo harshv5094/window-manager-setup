@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-source ~/GitHub/wm/modules/colors.sh
+source ~/.ghq/github.com/harshv5094/window-manager-setup/modules/colors.sh
 
 function package_install_common() {
   # For Fedora or Red Hat Based Distribution
   if command -v dnf &>/dev/null; then
     echo_info "Installing common packages"
-    sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-common.txt | tr "\n" " ")
+    sudo dnf install $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-common.txt | tr "\n" " ")
     return
   fi
 }
@@ -22,7 +22,7 @@ function package_install_hypr() {
       sudo dnf copr enable solopasha/hyprland
     fi
     sudo dnf makecache
-    sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-hypr.txt | tr "\n" " ")
+    sudo dnf install $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-hypr.txt | tr "\n" " ")
     return
   fi
 }
@@ -33,21 +33,21 @@ function package_install_i3() {
   if command -v dnf &>/dev/null; then
     echo_info "Installing dnf packages"
     sudo dnf makecache
-    sudo dnf install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/dnf-i3.txt | tr "\n" " ")
+    sudo dnf install $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/dnf-i3.txt | tr "\n" " ")
     return
   fi
 
   # For Debian Based Distribution
   if command -v nala &>/dev/null; then
     echo_info "Installing nala packages"
-    sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
+    sudo nala install $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/apt-i3.txt | tr "\n" " ")
     return
   else
     echo_info "Installing nala"
     sudo apt update && sudo apt upgrade -y
     sudo apt install nala
     echo_info "Installing nala packages"
-    sudo nala install $(grep -vE "^\s*#" ~/GitHub/wm/package-info/apt-i3.txt | tr "\n" " ")
+    sudo nala install $(grep -vE "^\s*#" ~/.ghq/github.com/harshv5094/window-manager-setup/package-info/apt-i3.txt | tr "\n" " ")
     return
   fi
 }
@@ -68,19 +68,19 @@ function initial() {
         git clone https://github.com/harshv5094/my-wallpapers ~/Pictures/
       fi
       package_install_common
-      ~/GitHub/wm/modules/folders.sh
+      ~/.ghq/github.com/harshv5094/window-manager-setup/modules/folders.sh
       break
       ;;
 
     "Hyprland 🌈")
       package_install_hypr
-      ~/GitHub/wm/modules/hypr-folders.sh
+      ~/.ghq/github.com/harshv5094/window-manager-setup/modules/hypr-folders.sh
       break
       ;;
 
     "i3wm 🌈")
       package_install_i3
-      ~/GitHub/wm/modules/i3-folders.sh
+      ~/.ghq/github.com/harshv5094/window-manager-setup/modules/i3-folders.sh
       break
       ;;
 
